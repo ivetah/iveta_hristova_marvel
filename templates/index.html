@@ -7,65 +7,61 @@
 
   <!-- Page Content -->
  
+
     <body>
         <header style="padding: 0% !important;"class="jumbotron my-4">
-            <div >
-                <img style="padding: 0% !important; " class="card-img-top" src="{% static 'img/nav_bar_img.jpg' %}" >
+            <div class="container" style="padding: 0% !important; " >
+                <img style="padding: 0% !important; " class="card-img-top" src="{% static 'img/groups_art_mas_mob_01.jpg' %}" alt="">
+                <div class="centered">
+                <h1><span class="masthead__headline">Marvel Teams &amp; Groups</span></h1>
+                <div class="masthead__copy">Assemble alongside the undercover organizations, bandit bands of bad guys, and Super Hero squads that shape the Marvel Universe!</div>
+              </div>
             </div>
         </header>
         <div class="container">
-        <div class="content-grid content-grid--light">
-            <h3 style="margin-left: -69% !important; padding: 0%">
-              <span style="color: black" class="masthead__eyebrow title">FEATURED CHARACTERS</span>          
-            </h3>
-    <div class="grid-base grid__6">
-      
-    {% for character in characters %}
-      
-      <div class="mvl-card mvl-card--explore">
-        <a href="{% url 'specific_character_profile' character.id %}" class="explore__link"  data-parent-component-type="content_grid" data-card-column-position="1" data-card-page-position="1" data-card-row-position="1" data-click-type="link" >
-            <div class="card-thumb-frame">
-                <figure class="img__wrapper " mvl-id="lzy-95">
-                    {% if character.profile_picture  %}
-                      <img mvl-type="explore" src="{{ character.profile_picture.url }}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
-                    {% else %}
-                        {% if character.gender == 'Female' %}
-                            <img mvl-type="explore" src="{% static 'img/female_img.jpg' %}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
+        <h3 style="margin-left: -69% !important; padding: 0%">
+            <span style="color: black" class="masthead__eyebrow title">FEATURED GROUPS</span>          
+          </h3>
+        <div class="grid-base grid__6">
+      {% for group in groups %}
+        <div class="mvl-card mvl-card--explore">
+            <a href="#" class="explore__link"   >
+                <div class="card-thumb-frame">
+                    <figure class="img__wrapper " mvl-id="lzy-95">
+                        {% if group.profile_picture  %}
+                            <img mvl-type="explore" src="{{ group.profile_picture.url }}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
                         {% else %}
-                            <img mvl-type="explore" src="{% static 'img/male_img.jpg' %}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
+                            <img mvl-type="explore" src="{% static 'img/team.jpeg' %}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
                         {% endif %}
-                    {% endif %}
-
-
-                </figure>
-            </div>
-            <div class="card-body is-sliding">
-                <p class="card-body__headline">{{ character.hero }}</p>
-                <div class="card-footer">
-                    <p class="card-footer__secondary-text">{{ character.first_name }} {{ character.last_name }}</p>
-                    <p class="card-footer__micro-description"></p>
+                    </figure>
                 </div>
+                <div class="card-body is-sliding">
+                    <p class="card-body__headline">{{ group.name }}</p>
+                    <div class="card-footer">
+                        <p class="card-footer__micro-description"></p>
+                    </div>
+                </div>
+            </a>
             </div>
-        </a>
-      </div>
-
-    {% endfor %}
-
+        {% endfor %}
     </div>
+
     <div class="content-grid__load-more">
         <nav aria-label="results pagination">
             <ul class="pagination">
-                {% for i in characters.paginator.page_range %}
-                  {% if characters.number == i %}
-
+                {% for i in     <div class="content-grid__load-more">
+        <nav aria-label="results pagination">
+            <ul class="pagination">
+                {% for i in groups.paginator.page_range %}
+                  {% if groups.number == i %}
                       <li class="pagination__item  pagination__item_active" style="color:#e62429">
-                          <span role="button" tabindex="0" aria-label="Page {{i}}" data-click-text="{{ i }}" data-click-type="button" data-further-details="pagination">
+                          <span role="button" tabindex="0" aria-label="Page {{i}}" >
                             <a href="?page={{ i }}"> {{ i }}</a>
                           </span>
                         </li>
                     {% else %}
                     <li class="pagination__item pagination__item_active">
-                        <span role="button" tabindex="0" aria-label="Page {{i}}" data-click-text="{{ i }}" data-click-type="button" data-further-details="pagination">
+                        <span role="button" tabindex="0" aria-label="Page {{i}}" >
                           <a href="?page={{ i }}"> {{ i }}</a>
                         </span>
                       </li>
@@ -75,8 +71,9 @@
             </ul>
         </nav>
     </div>
+
+
   </div>
-</div>
   <!-- /.container -->
 </body>
   {% include "footer.html" %}

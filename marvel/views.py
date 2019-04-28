@@ -8,25 +8,8 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidde
 from django.urls import reverse
 from django.db.models import Q
 
-class CharactersView(View):
-    template_name = 'index.html'
-    def get(self, request):
-        characters = Character.objects.all()
-        page = request.GET.get('page', 1)
-        paginator = Paginator(characters, 6)
-        try:
-            paginated_characters = paginator.page(page)
-        except PageNotAnInteger:
-            paginated_characters = paginator.page(1)
-        except EmptyPage:
-            paginated_characters = paginator.page(paginator.num_pages)
-        context = {
-          'characters': paginated_characters  
-        }
-        return render(request, self.template_name, context)
-
 class IndexView(View):
-    template_name = 'groups.html'
+    template_name = 'index.html'
     def get(self, request):
         groups = Group.objects.all()
         page = request.GET.get('page', 1)
@@ -39,6 +22,23 @@ class IndexView(View):
             paginated_groups = paginator.page(paginator.num_pages)
         context = {
           'groups': paginated_groups  
+        }
+        return render(request, self.template_name, context)
+
+class CharactersView(View):
+    template_name = 'characters.html'
+    def get(self, request):
+        characters = Character.objects.all()
+        page = request.GET.get('page', 1)
+        paginator = Paginator(characters, 6)
+        try:
+            paginated_characters = paginator.page(page)
+        except PageNotAnInteger:
+            paginated_characters = paginator.page(1)
+        except EmptyPage:
+            paginated_characters = paginator.page(paginator.num_pages)
+        context = {
+          'characters': paginated_characters  
         }
         return render(request, self.template_name, context)
 
@@ -85,7 +85,6 @@ class SearchGroupsView(View):
       return render(request, self.template_name, )
     
     def post(self, request, *args, **kwargs):
-      print(11, request.POST)
       data = {}
       if 'search' in request.POST:
         searched_name = request.POST.get('search', None)
