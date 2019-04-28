@@ -12,7 +12,7 @@ Django 2.2
 ## Getting Started
 
 ```
-git clone https://github.com/ivetah/iveta_hristova_repo
+git clone https://github.com/ivetah/iveta_hristova_marvel
 ```
 
 ### Make migrations 
