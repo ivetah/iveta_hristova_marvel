@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+  {% load staticfiles %}
+  {% include "header.html" %}
+
+  <!-- Page Content -->
+    <body>
+
+        <div class="masthead__hero">
+            <div class="masthead__main">
+                    <figure class="img__wrapper masthead__background">
+                            {% if character.profile_picture  %}
+                                <div class="built__background built__background--multi  use-vars"  style="background-image: url('{{character.profile_picture.url }}');">
+                            {% else %}
+                                <div class="built__background built__background--multi  use-vars" >
+                            {% endif %}
+                        </div>
+                    </figure>
+                    <div class="container">
+                        <div class="masthead__container masthead__container_playing-false ">
+                            <h1>
+                                <span class="masthead__eyebrow">{{character.first_name}} {{character.last_name }}</span>
+                                <span class="masthead__headline"> {{ character.hero }}</span>
+                            </h1>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="page__component page__component--character page__component--ad section__color__light firstComponent" data-top-component="ad" data-page-position="1">
+        <div class="ad ad--empty ad--banner">
+            <div></div>
+        </div>
+    </section>
+    <section id="content_grid-2" class="page__component page__component--character page__component--content_grid section__color__light " data-top-component="content_grid" data-page-position="2"></section>
+    <section id="power_grid-3" class="page__component page__component--character page__component--power_grid section__color__ " data-top-component="power_grid" data-page-position="3">
+        <div class="power-grid grid-wrapper--nested">
+            
+        </div></section><section id="two_column-4" class="page__component page__component--character page__component--two_column section__color__ " data-top-component="two_column" data-page-position="4"><div class="two-column flex-wrapper"><div class="flex-col-auto two-column__content "><div class="content-block"><div class="content-block__left-rail"><h3 class="title"> <!-- -->Biography</h3></div><div class="content-block__body">
+            <h3 class="title">Biography</h3><div class="text"><p>{{ character.biography }}</p>
+        </div></div></div></div><div class="flex-col-fixed two-column__spacer">
+
+        </div><div class="flex-col-fixed two-column__rail"><div class="railExploreBio">
+            <div class="bioheader  ">
+                <div class="bioheader__charInfo"><div class="bioheader__stats">
+                    <p class="bioheader__label">height</p><p class="bioheader__stat">{{ character.height }}</p>
+                </div>
+                <div class="bioheader__stats">
+                    <p class="bioheader__label">weight</p><p class="bioheader__stat">{{ character.weight }} 
+
+                    </p>
+                </div></div>
+                <div class="bioheader__charInfo">
+                    <div class="bioheader__stats">
+                        <p class="bioheader__label">eyes</p><p class="bioheader__stat">{{ character.eyes }}</p>
+                    </div>
+                    <div class="bioheader__stats">
+                        <p class="bioheader__label">hair</p>
+                        <p class="bioheader__stat">{{ character.hair }}</p>
+                    </div>
+                </div>
+
+                <div class="bioheader__charInfo">
+                    <div class="bioheader__stats">
+                        <p class="bioheader__label">Groups</p>
+                        {% for group in groups %}
+                        <p class="bioheader__stat">{{ group.name }}</p>
+                        {% endfor %}
+                    </div>     
+                </div>
+            </div>
+  <!-- /.container -->
+  </div>
+  </div>
+  </div>
+  </section>
+  
+</body>
+  {% include "footer.html" %}
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+  {% load staticfiles %}
+  {% include "header.html" %}
+
+  <style>
+  a :hover {color: #e62429 !important}
+  .mvl-card--search .card-body__headline, .tabs__btns :hover {color: #e62429 !important}
+  </style>
+  <!-- Page Content -->
+  <div class="container">
+    <body>
+        <section id="search_bar-1" class="page__component page__component--search page__component--search_bar section__color__ firstComponent" data-top-component="search_bar" data-page-position="1">
+            <div class="search-bar">
+                <div class="typeahead">
+                    <div class="typeahead ">
+                        <div class="typeahead__icon"><span class="icon--svg icon--svg--black-stroke icon--search" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17"><g fill-rule="evenodd" stroke-width="2"><circle cx="6.5" cy="6.5" r="5.5"></circle><path d="M14 14l3.536 3.536" stroke-linecap="square"></path></g></svg></span></div>
+                        <div class="typeahead__container">
+                            <form  method="POST">
+                               {% csrf_token %}
+                                <input id="searched_string" type="text"  class="typeahead__input" name="search" placeholder="Search characters" value="">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs__component ">
+                    <ul class="tabs__container ">
+                        <li  class="tabs__btns active"><a href="{% url 'search_characters'  %}">characters</a></li>
+                        <li  class="tabs__btns"><a role="button" href="{% url 'search_groups'  %}">groups</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </body>
+
+    <br>
+
+        {% for item in data %}
+        <div class="mvl-card mvl-card--search">
+            <div class="mvl-card__search-wrapper--featured">
+                <a class="card-overlay-frame" href="{% url 'specific_character_profile' item.id %}" class="explore__link"   data-parent-component-type="content_grid" data-card-column-position="1" data-card-page-position="1" data-card-row-position="1" data-click-type="link" >
+    
+                    <div class="card-thumb-frame">
+                        <figure class="img__wrapper " mvl-id="lzy-712">
+                            {% if item.profile_picture  %}
+                                    <img mvl-type="explore" src="{{ item.profile_picture.url }}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn" >
+                            {% else %}
+                                {% if item.gender == 'Female' %}
+                                    <img mvl-type="explore" src="{% static 'img/female_img.jpg' %}" class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
+                                {% else %}
+                                    <img mvl-type="explore" src="{% static 'img/male_img.jpg' %}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
+                                {% endif %}
+                            {% endif %}
+                        </figure>
+                    </div>
+                </a>
+                <div class="card-body" style="background-color: white">
+                    <div class="card-body-wrapper">
+                        <a class="card-body__content-type" href="{% url 'specific_character_profile' item.id %}">character</a>
+                        <p class="card-body__headline">
+                            <a href="{% url 'specific_character_profile' item.id %}">
+                                {{item.hero}} ({{item.first_name}} {{item.last_name}})
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <br>
+            {% endfor %}
+    <div style="margin-bottom: 50%">
+
+        </div>
+  {% include "footer.html" %}
+
+</html>
