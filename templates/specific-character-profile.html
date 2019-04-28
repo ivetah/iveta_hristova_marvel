@@ -46,12 +46,21 @@
         </div><div class="flex-col-fixed two-column__rail"><div class="railExploreBio">
             <div class="bioheader  ">
                 <div class="bioheader__charInfo"><div class="bioheader__stats">
-                    <p class="bioheader__label">height</p><p class="bioheader__stat">{{ character.height }}</p>
+                    <p class="bioheader__label">height</p>
+                    {% if character.height %}
+                        <p class="bioheader__stat">{{ character.height }}</p>
+                    {% else %}
+                        <p class="bioheader__stat"> - </p>
+                    {% endif %}
                 </div>
                 <div class="bioheader__stats">
-                    <p class="bioheader__label">weight</p><p class="bioheader__stat">{{ character.weight }} 
-
-                    </p>
+                    <p class="bioheader__label">weight</p>
+                    {% if character.weight %}
+                        <p class="bioheader__stat ">{{ character.weight }}</p>
+                    {% else %}
+                        <p class="bioheader__stat center"> - </p>
+                    {% endif %}
+                   
                 </div></div>
                 <div class="bioheader__charInfo">
                     <div class="bioheader__stats">
