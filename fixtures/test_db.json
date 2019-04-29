@@ -1,5 +1,41 @@
 [
 {
+    "model": "marvel.group",
+    "pk": 1,
+    "fields": {
+        "name": "AVENGERS",
+        "profile_picture": "",
+        "history": "The Norse God Loki was trapped by his father, Odin, after suffering defeat at the hands of his brother, Thor. However, even captivity could not quell Loki\u2019s lust for vengeance, and he remotely used his powers to frame the Hulk for nearly destroying a passenger train. While Loki hoped to engineer a battle between Thor and the Hulk, Hulk\u2019s ally Rick Jones and his friends sent out a distress signal that was answered by Iron Man, Ant-Man, and the Wasp, as well as Thor himself."
+    }
+},
+{
+    "model": "marvel.group",
+    "pk": 2,
+    "fields": {
+        "name": "X-MEN",
+        "profile_picture": "",
+        "history": "Realizing mutants were the next step in human evolution, Professor Charles Xavier gathered gifted teenagers to be his first class of students. His goal to protect and educate the next generation of homo superior, while pursuing a dream of harmony."
+    }
+},
+{
+    "model": "marvel.group",
+    "pk": 3,
+    "fields": {
+        "name": "Fantastic Four",
+        "profile_picture": "",
+        "history": ""
+    }
+},
+{
+    "model": "marvel.group",
+    "pk": 4,
+    "fields": {
+        "name": "S.H.I.E.L.D.",
+        "profile_picture": "",
+        "history": "This transgovernmental intelligence agency specializes in protecting the Earth from super human threats."
+    }
+},
+{
     "model": "marvel.character",
     "pk": 1,
     "fields": {
@@ -12,7 +48,8 @@
         "biography": "As the king of the African nation of Wakanda, T\u2019Challa protects his people as the latest in a legacy line of Black Panther warriors.\r\n\r\nHe has encountered many heroes in his time ranging from Sleepwalker to She-Hulk to the Avengers, many of which ended with 8-Ball's incarceration. However, his biggest mistake was when he decided to pull a heist with three partners - Freezer Burn, Humbug and Whirlwind - to rob the publishing mogul, Ricadonna. Unaware Ricadonna was really an up and coming crime figure with a lot of connections, 8-Ball and company inadvertently stole a one-of-a-kind microchip worth billions, and she would do anything to get it back. When Misty Knight and Colleen Wing came looking for him because of a warrant for his arrest, 8-Ball told them he stole to pay for his elderly grandmother's nursing home. That story may have slightly tugged at their heart strings, but Ricadonna hired the Wrecker to take him out - which he did by blowing up the car he was in.",
         "eyes": "Brown",
         "hair": "Brown",
-        "profile_picture": ""
+        "profile_picture": "",
+        "group": 4
     }
 },
 {
@@ -28,7 +65,8 @@
         "biography": "Enigma\r\nNatasha Romanoff was trained from a young age to cultivate a very specific set of skills in a Russian facility called the Red Room. There she honed the skills that would turn her into a human warrior who continues to stand shoulder-to-shoulder with super soldiers, Asgardians and people in armored suits. However, she eventually eschewed her KGB masters, switched allegiances and began working for the good guys.\r\n\r\nTrained by the Best\r\nExhibiting no super human abilities, the Black Widow boasts ultimate human levels of strength, agility, and stamina. She is extensively trained to near perfection in a variety of fighting styles, such as karate, judo, kung fu, and wrestling, and with all manner of weapons\u2014both traditional and high-tech\u2014combined with her background in gymnastics, acrobatics, and ballet to always accomplish her mission.\r\n\r\nShe can use a simple handgun just as well as a Chitauri battle staff or even Captain America's shield. Her signature weapons include dual batons, a pair of Glock 26s and the Black Widow\u2019s Bite\u2014bracelets that discharge electricity. Romanoff also displays great skill when it comes to hacking in computers and technological systems to dig for information or regaining control.",
         "eyes": "Brown",
         "hair": "Brown",
-        "profile_picture": ""
+        "profile_picture": "",
+        "group": 3
     }
 },
 {
@@ -44,7 +82,8 @@
         "biography": "Hagees was once a designer of missile propulsion systems for a defense contractor. To cope with the stress of his job, he turned to gambling, losing thousands in pool rooms. When he fell into serious financial jeopardy, his employers took notice of his gambling problem, and fired him, fearing he was selling defense secrets to pay his debts. Furious, he designed the costumed identity of 8-Ball, basing his custom pool cue on his propulsion system work. He organized a gang of henchmen and went on a crime spree in New York city to make his fortune.\r\n\r\nHe has encountered many heroes in his time ranging from Sleepwalker to She-Hulk to the Avengers, many of which ended with 8-Ball's incarceration. However, his biggest mistake was when he decided to pull a heist with three partners - Freezer Burn, Humbug and Whirlwind - to rob the publishing mogul, Ricadonna. Unaware Ricadonna was really an up and coming crime figure with a lot of connections, 8-Ball and company inadvertently stole a one-of-a-kind microchip worth billions, and she would do anything to get it back. When Misty Knight and Colleen Wing came looking for him because of a warrant for his arrest, 8-Ball told them he stole to pay for his elderly grandmother's nursing home. That story may have slightly tugged at their heart strings, but Ricadonna hired the Wrecker to take him out - which he did by blowing up the car he was in.",
         "eyes": "Green",
         "hair": "Blond",
-        "profile_picture": ""
+        "profile_picture": "",
+        "group": null
     }
 },
 {
@@ -60,7 +99,8 @@
         "biography": "Born 1500 years ago to Odin and Frigga, the king and queen of fabled Asgard, Thor grew into a mighty warrior and protector of his home and people. Thought to be rash and even reckless by his father, Thor nevertheless looked forward to the day of his ascension to the throne. But, his adoptive brother Loki schemed in private to ensure that day never arrived. He manipulated Thor into attacking the Frost Giants, legendary adversaries of the Asgardians and Loki\u2019s people, and Odin\u2014hoping to teach his son humility\u2014divested Thor of his magic hammer Mjolnir and banished him to Midgard, the realm also known as Earth.\r\n\r\nAlone and unable to return to Asgard, Thor met scientists Jane Foster and Erik Selvig in the midst of their investigation into strange activity near a small New Mexico town. While his brother struggled with the limitations of mortals on Earth, Loki worked to ensure his own seizure of the Asgardian throne and planned to allow the Frost Giant king\u2014his real father\u2014into Asgard to slay Odin in his sleep. Back on Earth, Thor sacrificed himself to save the town from destruction and in doing so, impressed Odin enough to restore him to full Asgardian power.\r\nWith Mjolnir once again in his grasp and the admiration and possible love of Jane Foster, Thor returned to his home, routed the Frost Giants, and defeated Loki in battle. Chagrined at his loss and stinging from Odin\u2019s condemnation, Loki chose to fall away from Asgard into a strange warp in space while Thor and their father looked on. Though happy to be back in Asgard, Thor\u2019s thoughts were filled with adventure on Midgard with Jane Foster.\r\n\r\nThe Trappings of a God\r\nLike all Asgardians, Thor possesses great strength, endurance, stamina, and long life, but it is his command over the stormy forces of nature that separate him from his brethren as a true son of Odin the Allfather. Thor can call down lightning and thunder at will and utilize them like a blacksmith uses his tools to work iron and steel\u2014bending and shaping them into weapons. Once he believed it was his hammer Mjolnir that granted him these powers, but in truth the ability has rested within him the whole time.",
         "eyes": "Brown",
         "hair": "Brown",
-        "profile_picture": ""
+        "profile_picture": "",
+        "group": null
     }
 },
 {
@@ -76,7 +116,8 @@
         "biography": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
         "eyes": "Blue",
         "hair": "Blond",
-        "profile_picture": ""
+        "profile_picture": "",
+        "group": 4
     }
 },
 {
@@ -84,15 +125,16 @@
     "pk": 6,
     "fields": {
         "hero": "THANOS",
-        "first_name": null,
-        "last_name": null,
+        "first_name": "",
+        "last_name": "",
         "height": "190.0",
         "weight": null,
         "gender": "Male",
         "biography": "Using the power of the Infinity Stones, Thanos believes he can ultimately save the universe by wiping out half of its population.",
         "eyes": "Blue",
-        "hair": null,
-        "profile_picture": ""
+        "hair": "",
+        "profile_picture": "",
+        "group": null
     }
 },
 {
@@ -108,7 +150,8 @@
         "biography": "Genius inventor Tony Stark continued his father Howard Stark\u2019s weaponry business after his parents\u2019 untimely deaths and flew it to even greater heights of innovation. While in Afghanistan to demonstrate a new missile for the U.S. military, Stark\u2019s convoy came under fire by a terrorist group known as the Ten Rings and he was severely wounded. Taken prisoner by the group, Stark awoke in their headquarters to learn that shrapnel near his heart had nearly cost him his life, but swift action by scientist and fellow prisoner Ho Yinsen\u2014who had inserted a powerful electromagnet in Stark\u2019s chest\u2014would prolong it temporarily.\r\n\r\nStalling his captors after they demanded he build them a new weapon, Stark replaced the magnet with the RT, a miniature version of a device originally designed by his father, the Arc Reactor. Furthermore, he and Yinsen created a crude suit of armor which could provide them the means with which to escape. The suit worked as planned, though Yinsen sacrificed himself in order to allow Tony enough time to power it up to fight their terrorist captors.",
         "eyes": "Green",
         "hair": "Green",
-        "profile_picture": ""
+        "profile_picture": "",
+        "group": 1
     }
 },
 {
@@ -122,9 +165,10 @@
         "weight": null,
         "gender": "Female",
         "biography": "The younger daughter of history professor John Grey and his wife Elaine, Jean Grey was 10 years old when her mutant telepathic powers first manifested after experiencing the emotions of a dying friend. Her parents took her to be treated by Professor Charles Xavier. While Xavier treated Jean he also used her to fine tune his Cerebro machine. When Xavier introduced young Jean to the astral plane a part of her mind manifested as a Phoenix raptor and touched the mind of Scott Summers in the orphanage. Later, Xavier erected psychic shields in Jean\u2019s mind to prevent her from using her telepathic powers until she was mature enough to control them. Eventually, using her telekinetic powers, Jean was a founding member of Xavier\u2019s team of mutant trainees the X-Men as Marvel Girl. Upon a mission in outer space Jean was noticed by the Phoenix Force which took note of her unlimited potential. At this moment Jean had a vision of becoming the Phoenix but the vision faded from her memory as it ended. She soon fell in love with fellow student Scott Summers, and later would develop a strong attraction towards one of the team\u2019s new recruits, the feral Wolverine.\r\n\r\nAfter Jean and the X-Men defeated scientist Stephen Lang and his robotic Sentinels on his space station, the heroes escaped back to Earth in a shuttle through a lethal solar radiation storm. Dying from radiation poisoning, Jean was saved by the cosmic entity known as the Phoenix Force who created a duplicate body complete with memories and personality, absorbed a portion of her consciousness and cast her into suspended animation in a strange cocoon at the bottom of Jamaica Bay.",
-        "eyes": null,
+        "eyes": "",
         "hair": "Red",
-        "profile_picture": ""
+        "profile_picture": "",
+        "group": 2
     }
 },
 {
@@ -140,7 +184,8 @@
         "biography": "Bobby Drake discovered his mutant power to create ice while in his early teens, yet kept his condition hidden from everyone but his parents. Initially, Bobby was unable to stop feeling cold and shivering, but soon managed to keep it under control. When a bully named Rocky Beasely and his friends attacked Bobby and his then-girlfriend, Judy Harmon, the youngster panicked. To save Harmon, Bobby temporarily encased Rocky in ice, thus revealing his abilities for all to see. Believing the boy to be a menace, the townspeople organized a lynch mob. They broke into Bobby's home and overpowered him, but the local sheriff took the teenager into custody for his own protection. Meanwhile, the situation had come to the attention of Professor Charles Xavier, the telepathic mentor of the team of teenage mutant super heroes the X-Men.\r\n\r\nProfessor X dispatched his first X-Man, Cyclops, to contact Bobby. Cyclops stole into the jailhouse as planned, but the two began fighting when Bobby refused to accompany him. Caught by the lynch mob, Cyclops and Bobby were about to be hanged when they broke free. Professor X used his mental powers to halt the townspeople in their tracks and erase their memories of Bobby's powers. A grateful Bobby then accepted Xavier's invitation to enroll at his School for Gifted Youngsters and took the codename Iceman. Though initially granting him a snow-like form, Bobby soon learned to increase his degree of cold control resulting in an ice-like, almost transparent form.\r\n\r\nHated and feared by humanity, the X-Men honed their amazing abilities while standing in defense of a world pushed to the brink of genetic war by a handful of mutant terrorists. Iceman, the team's youngest founding member, became known as the comedian of the group. Regardless, he pulled his weight and worked well with rest of the team.",
         "eyes": "Brown",
         "hair": "Brown",
-        "profile_picture": ""
+        "profile_picture": "",
+        "group": 3
     }
 },
 {
@@ -155,8 +200,9 @@
         "gender": "Male",
         "biography": "While working at a nuclear power plant, Norton McCoy was exposed to massive amounts of radiation that affected his genes. As a result, Norton's son, Henry \"Hank\" McCoy, was born a mutant who showed the signs of his being different from birth with his unusually large hands and feet. As a youth, Hank's freakish appearance was the subject of much ridicule from his classmates, earning him the nickname of \"Beast\". However, one classmate named Jennifer came to know the real Hank after he began tutoring her in biology. On the night of the junior prom, Jennifer insisted that Hank accompany her as her date, and stood up for him after he was teased.\r\n\r\nIn his senior year, Hank's superhuman agility and athletic prowess earned him recognition as a star football player. During one game, Hank easily stopped a trio of robbers who were attempting to escape across the football field. His efforts were noticed by the villain named the Conquistador who kidnapped Hank's parents in an effort to coerce the young mutant into working for him. The X-Men soon arrived and defeated the villain, and Hank was invited by Professor Charles Xavier to join the team of teenage mutant heroes and enroll in the Xavier School for Gifted Youngsters. Unable to resist the temptation of a private institution that could offer him limitless academic opportunities, Hank accepted. Hank's days were rich with differential equations, Proust and workouts in the Danger Room.\r\n\r\nA brilliant student, Hank completed his doctoral studies under Xavier's tutelage, and finally graduated from the Xavier School to take a position at the Brand Corporation as a genetic researcher under Doctor Carl Maddicks. During one of his experiments, Hank discovered the hormonal extract that causes genetic mutation and went to inform Maddicks of his findings. However, Maddicks was secretly plotting to steal top secret government documents, and Hank took it upon himself to stop Maddicks. In order to disguise his appearance, Hank took the extract and underwent radical physical changes that enhanced his agility and strength, as well as causing him to grow fangs, pointed ears, and fur all over his body. When he stayed too long in this state, Hank found he could not return to his original form. He was now a beast in fact as well as in name. At first, he tried to hide his mutation with a latex mask and gloves, but later learned to accept his new appearance.",
         "eyes": "Brown",
-        "hair": null,
-        "profile_picture": ""
+        "hair": "",
+        "profile_picture": "",
+        "group": null
     }
 },
 {
@@ -170,63 +216,10 @@
         "weight": "140.0",
         "gender": "Male",
         "biography": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
-        "eyes": null,
-        "hair": null,
-        "profile_picture": ""
-    }
-},
-{
-    "model": "marvel.group",
-    "pk": 1,
-    "fields": {
-        "name": "AVENGERS",
+        "eyes": "",
+        "hair": "",
         "profile_picture": "",
-        "history": "The Norse God Loki was trapped by his father, Odin, after suffering defeat at the hands of his brother, Thor. However, even captivity could not quell Loki\u2019s lust for vengeance, and he remotely used his powers to frame the Hulk for nearly destroying a passenger train. While Loki hoped to engineer a battle between Thor and the Hulk, Hulk\u2019s ally Rick Jones and his friends sent out a distress signal that was answered by Iron Man, Ant-Man, and the Wasp, as well as Thor himself.",
-        "members": [
-            2,
-            7
-        ]
-    }
-},
-{
-    "model": "marvel.group",
-    "pk": 2,
-    "fields": {
-        "name": "X-MEN",
-        "profile_picture": "",
-        "history": "Realizing mutants were the next step in human evolution, Professor Charles Xavier gathered gifted teenagers to be his first class of students. His goal to protect and educate the next generation of homo superior, while pursuing a dream of harmony.",
-        "members": [
-            8,
-            9,
-            10
-        ]
-    }
-},
-
-{
-    "model": "marvel.group",
-    "pk": 3,
-    "fields": {
-        "name": "Fantastic Four",
-        "profile_picture": "",
-        "history": "",
-        "members": [
-            11
-        ]
-    }
-},
-{
-    "model": "marvel.group",
-    "pk": 4,
-    "fields": {
-        "name": "S.H.I.E.L.D.",
-        "profile_picture": "",
-        "history": "This transgovernmental intelligence agency specializes in protecting the Earth from super human threats.",
-        "members": [
-            8,
-            9,
-            10
-        ]
+        "group": 4
     }
 }
 ]

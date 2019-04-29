@@ -8,8 +8,8 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidde
 from django.urls import reverse
 from django.db.models import Q
 
-class IndexView(View):
-    template_name = 'index.html'
+class GroupsView(View):
+    template_name = 'groups.html'
     def get(self, request):
         groups = Group.objects.all()
         page = request.GET.get('page', 1)
@@ -25,8 +25,8 @@ class IndexView(View):
         }
         return render(request, self.template_name, context)
 
-class CharactersView(View):
-    template_name = 'characters.html'
+class IndexView(View):
+    template_name = 'index.html'
     def get(self, request):
         characters = Character.objects.all()
         page = request.GET.get('page', 1)
@@ -54,16 +54,8 @@ class CharacterDetailsView(View):
         }
         return render(request, self.template_name, context)
 
-     
-class SearchView(View):
-    template_name = 'search.html'
-    def get(self, request, *args, **kwargs):
-   
-      return render(request, self.template_name, )
-    
-
 class SearchCharactersView(View):
-    template_name = 'search.characters.html'
+    template_name = 'search-characters.html'
     def get(self, request, *args, **kwargs):
    
       return render(request, self.template_name, )
