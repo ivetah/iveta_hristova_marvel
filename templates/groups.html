@@ -22,29 +22,30 @@
         <h3 style="margin-left: -69% !important; padding: 0%">
             <span style="color: black" class="masthead__eyebrow title">FEATURED GROUPS</span>          
           </h3>
-        <div class="grid-base grid__6">
-      {% for group in groups %}
-        <div class="mvl-card mvl-card--explore">
-            <a  class="explore__link"   >
-                <div class="card-thumb-frame">
-                    <figure class="img__wrapper " mvl-id="lzy-95">
-                        {% if group.profile_picture  %}
-                            <img mvl-type="explore" src="{{ group.profile_picture.url }}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
-                        {% else %}
-                            <img mvl-type="explore" src="{% static 'img/team.jpeg' %}"  class="card-thumb-frame__thumbnail img__blur img__blur--focusIn">
-                        {% endif %}
-                    </figure>
-                </div>
-                <div class="card-body is-sliding">
-                    <p class="card-body__headline">{{ group.name }}</p>
-                    <div class="card-footer">
-                        <p class="card-footer__micro-description"></p>
+          <div class="slider__wrapper" style="margin-left: 5% !important">
+                <ul class="slider__container  show">
+                {% for group in groups %}
+                    <div class="slider__item" style="width: 15.3226%;">
+                        <div class="mvl-card mvl-card--explore">
+                            <a class="explore__link"  data-parent-component-type="slider" data-click-type="link" href="{% url 'specific_group_profile' group.id %}">
+                                <div class="card-thumb-frame">
+                                    <figure class="img__wrapper ">
+                                        {% if group.profile_picture  %}
+                                            <img mvl-type="explore" src="{{ group.profile_picture.url }}" class="card-thumb-frame__thumbnail">
+                                        {% else %}
+                                            <img mvl-type="explore" src="{% static 'img/team.jpeg' %}" class="card-thumb-frame__thumbnail">                                        
+                                        {% endif %}
+                                    </figure>
+                                </div>
+                                <div class="card-body is-sliding">
+                                        <p class="card-body__headline">{{ group.name }}</p>
+                                    </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </a>
+                {% endfor %}
+                </ul>
             </div>
-        {% endfor %}
-    </div>
 
     <div class="content-grid__load-more">
         <nav aria-label="results pagination">

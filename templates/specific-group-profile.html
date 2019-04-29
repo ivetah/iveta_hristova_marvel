@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+  {% load staticfiles %}
+  {% include "header.html" %}
+
+  <!-- Page Content -->
+    <body>
+
+  
+        <div class="masthead__hero">
+            <div class="masthead__main">
+                    <figure class="img__wrapper masthead__background">
+                            {% if group.profile_picture  %}
+                                <div class="built__background built__background--multi  use-vars"  style="background-image: url('{{group.profile_picture.url }}');">
+                            {% else %}
+                                <div class="built__background built__background--multi  use-vars" >
+                            {% endif %}
+                        </div>
+                    </figure>
+                    <div class="container">
+                        <div class="masthead__container masthead__container_playing-false ">
+                            <h1>
+                                <span class="masthead__eyebrow">{{group.name}} </span>
+                            </h1>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+    
+    <section class="page__component page__component--group page__component--ad section__color__light firstComponent" data-top-component="ad" data-page-position="1">
+        <div class="ad ad--empty ad--banner">
+            <div></div>
+        </div>
+    </section>
+    <br>
+    <div class="inlineModuleHeader__titleWrapper"><h3 class="inlineModuleHeader__header">Members</h3></div>
+    <br>
+
+
+
+
+    <div class="slider__wrapper" style="margin-left: 5% !important">
+        <ul class="slider__container  show">
+        {% for character in characters %}
+            <div class="slider__item" style="width: 15.3226%;">
+                <div class="mvl-card mvl-card--explore">
+                    <a class="explore__link"  data-parent-component-type="slider" data-click-type="link" href="{% url 'specific_character_profile' character.id %}">
+                        <div class="card-thumb-frame">
+                            <figure class="img__wrapper ">
+                                {% if character.profile_picture  %}
+                                    <img mvl-type="explore" src="{{ character.profile_picture.url }}" class="card-thumb-frame__thumbnail">
+                                {% else %}
+                                    {% if character.gender == 'female' %}
+                                         <img mvl-type="explore" src="{% static 'img/female_img.jpg' %}" class="card-thumb-frame__thumbnail">
+                                    {% else %}
+                                        <img mvl-type="explore" src="{% static 'img/male_img.jpg' %}" class="card-thumb-frame__thumbnail">
+                                    {% endif %}
+                                {% endif %}
+                            ></figure>
+                        </div>
+                        <div class="card-body is-sliding">
+                            <p class="card-body__headline">{{ character.hero }}</p>
+                            {% if character.group %}
+                                <div class="card-footer">
+                                    <p class="card-footer__micro-description">{{ character.group }}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+        </ul>
+    </div>
+
+
+
+    <section class="page__component page__component--group page__component--ad section__color__light firstComponent" data-top-component="ad" data-page-position="1">
+        <div class="ad ad--empty ad--banner">
+            <div></div>
+        </div>
+    </section>
+    <section id="content_grid-2" class="page__component page__component--group page__component--content_grid section__color__light " data-top-component="content_grid" data-page-position="2"></section>
+    <section id="power_grid-3" class="page__component page__component--group page__component--power_grid section__color__ " data-top-component="power_grid" data-page-position="3">
+        <div class="power-grid grid-wrapper--nested">
+            
+        </div></section><section id="two_column-4" class="page__component page__component--group page__component--two_column section__color__ " data-top-component="two_column" data-page-position="4"><div class="two-column flex-wrapper"><div class="flex-col-auto two-column__content "><div class="content-block"><div class="content-block__left-rail"><h3 class="title"> <!-- -->History</h3></div><div class="content-block__body">
+            <h3 class="title">History</h3><div class="text"><p>{{ group.history }}</p>
+        </div></div></div></div><div class="flex-col-fixed two-column__spacer">
+
+        </div>
+
+  </div>
+  </section>
+
+</body>
+  {% include "footer.html" %}
+
+</html>

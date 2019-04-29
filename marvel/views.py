@@ -30,7 +30,7 @@ class IndexView(View):
     def get(self, request):
         characters = Character.objects.all()
         page = request.GET.get('page', 1)
-        paginator = Paginator(characters, 6)
+        paginator = Paginator(characters, 5)
         try:
             paginated_characters = paginator.page(page)
         except PageNotAnInteger:
@@ -49,6 +49,17 @@ class CharacterDetailsView(View):
 
         context = {
           'character': character
+        }
+        return render(request, self.template_name, context)
+
+class GroupDetailsView(View):
+    template_name = 'specific-group-profile.html'
+    def get(self, request, *args, **kwargs):
+        group = Group.objects.get(pk=self.kwargs['pk'])
+        characters = Character.objects.filter(group=group)
+        context = {
+          'group': group,
+          'characters':characters
         }
         return render(request, self.template_name, context)
 

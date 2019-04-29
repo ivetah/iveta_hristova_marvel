@@ -29,5 +29,6 @@ urlpatterns = [
     url(r'^search/characters/$', views.SearchCharactersView.as_view(), name='search_characters'),
     url(r'^search/groups/$', views.SearchGroupsView.as_view(), name='search_groups'),
     url(r'^characters/(?P<pk>[0-9]+)/profile/$', views.CharacterDetailsView.as_view(), name='specific_character_profile'),
-
+    url(r'^groups/(?P<pk>[0-9]+)/profile/$', views.GroupDetailsView.as_view(), name='specific_group_profile'),  
+    
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
