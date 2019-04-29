@@ -46,11 +46,9 @@ class CharacterDetailsView(View):
     template_name = 'specific-character-profile.html'
     def get(self, request, *args, **kwargs):
         character = Character.objects.get(pk=self.kwargs['pk'])
-        groups = Group.objects.filter(members__in=[character.id]).values('name')
 
         context = {
-          'character': character,
-          'groups': groups
+          'character': character
         }
         return render(request, self.template_name, context)
 

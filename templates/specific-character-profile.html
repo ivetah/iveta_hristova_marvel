@@ -74,10 +74,10 @@
 
                 <div class="bioheader__charInfo">
                     <div class="bioheader__stats">
-                        <p class="bioheader__label">Groups</p>
-                        {% for group in groups %}
-                        <p class="bioheader__stat">{{ group.name }}</p>
-                        {% endfor %}
+                        <p class="bioheader__label">Group</p>
+                        {% if character.group %}
+                        <p class="bioheader__stat">{{ character.group.name }}</p>
+                        {% endif %}
                     </div>     
                 </div>
             </div>
